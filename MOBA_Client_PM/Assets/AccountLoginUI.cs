@@ -10,6 +10,8 @@ public class AccountLoginUI : MonoBehaviour
     [SerializeField] Button loginAccountButton;
     [SerializeField] Button createAccountButton;
 
+    [SerializeField] NetworkClient networkClient;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,10 +27,20 @@ public class AccountLoginUI : MonoBehaviour
 
     public void OnLoginButtonPress()
     {
-        
+        Debug.Log("fwegwegwegweg");
+        //accountName.text;
+        //accountPass.text;
+
+        //string msg = accountName.text + "," + accountPass.text;
+
+        networkClient.SendMessageToServer("Login Account Button Pressed");
+
+
     }
     public void OnCreateButtonPress()
     {
+        //Debug.Log("herhertjt4rj");
+        networkClient.SendMessageToServer("Create Account Button Pressed");
         
     }
 }
